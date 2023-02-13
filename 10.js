@@ -27,4 +27,3 @@ const incrementar = (num,val = 1) => num + val;
 
 console.log(incrementar(5));
 console.log(incrementar(5,2));
-
