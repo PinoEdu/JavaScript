@@ -76,5 +76,18 @@ c.toFixed(5); // Metodo para mostrar una cierta cantidad de decimales
 parseInt(c); // Metodo para mostrar la parte entera del numero
 parseFloat(c); // Metodo que muestra el numero decimal completo
 
+// ***Booleanos***
+let verdadero = true;
+let falso = false;
+let v = Boolean(true);
+let f = Boolean(false);
+
+// ***Undefined, null & NaN***
+let indefinida;
+let nulo = null;
+
+// NaN: Not a Number
+let noEsUnNumero = "hola" * 3.7;
+
 
 
