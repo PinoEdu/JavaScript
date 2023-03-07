@@ -105,3 +105,27 @@ colores.forEach(function (el, index){
     console.log(`<li id="${index}"> ${el} </li>`);
 });
 
+// ***Objetos***
+
+const Eduardo = {
+    nombre : 'Eduardo',
+    apellido : 'Pino', 
+    edad: 23,
+    saludar : function(){
+        console.log("Hola :)");
+    },
+    decirMiNombre : function(){
+        console.log(`Hola, mi nombre es ${this.nombre}`);   // Para hacer referencia al mismo objecto en que se encuentra
+    }
+}
+
+// Propiedades
+Eduardo['nombre']
+Eduardo['apellido']
+Eduardo['edad']
+Eduardo.nombre
+Eduardo.apellido
+Eduardo.edad
+
+// Metodos
+Eduardo.saludar
