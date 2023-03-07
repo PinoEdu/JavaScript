@@ -51,3 +51,19 @@ lorem.includes("Lorem")
 lorem.trim() //Quita los espacios al inicio y al final de cada string
 lorem.split(".")
 
+// ***Metodos de strings***
+
+// Concatenacion
+let saludar = "Hola " + nombre + apellido ;
+
+// Interpolacion de variables
+let saludar2 = `Hola ${nombre} ${apellido}`;
+
+let ul = `
+    <ul>
+        <li> Hola </li>
+        <li> Como </li>
+        <li> Estas </li>
+    </ul>
+`;
+
