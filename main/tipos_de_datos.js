@@ -67,3 +67,14 @@ let ul = `
     </ul>
 `;
 
+// ***Numeros***
+let a = 2;
+let b = new Number(1);
+let c = 7.19;
+
+c.toFixed(5); // Metodo para mostrar una cierta cantidad de decimales
+parseInt(c); // Metodo para mostrar la parte entera del numero
+parseFloat(c); // Metodo que muestra el numero decimal completo
+
+
+
