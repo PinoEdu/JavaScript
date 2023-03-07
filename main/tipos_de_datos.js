@@ -89,5 +89,19 @@ let nulo = null;
 // NaN: Not a Number
 let noEsUnNumero = "hola" * 3.7;
 
+// ***Arreglos***
+const arreglo = [];
+const elementos = [1, true, "Hola",[2, false, []],1.2];
+const arreglo2 = Array.of("X", "Y", "Z");
+const colores = ["Rojo", "Verde", "Azul"];
 
+// Metodos de un arreglo
+elementos.length;
+elementos[3];
+elementos.push(5);  // Agrega un elemento al final del arreglo
+elementos.pop();    // Quita el primer elemento del arreglo y lo retorna
+
+colores.forEach(function (el, index){
+    console.log(`<li id="${index}"> ${el} </li>`);
+});
 
