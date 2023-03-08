@@ -129,3 +129,14 @@ Eduardo.edad
 
 // Metodos
 Eduardo.saludar
+
+// ***Destructuracion***
+const numeros = [0,1,2,3,4,5];
+
+// Sin destructuracion
+let uno = numeros[0];
+let dos = numeros[1];
+let tres = numeros[2];
+
+// Con destructuracion
+const [one,two,three] = numeros;
