@@ -47,3 +47,28 @@ function sumar(a,b,...c){
 
 console.log(sumar(1,2));
 console.log(sumar(1,2,3,4));
+
+// ***Arrow functions***
+
+// Sin arrow function
+const diHola = function(){
+    console.log("Hola");
+};
+
+// Con arrow function (si es solo una linea, se puede omitir { })
+const diHello = () => console.log("Hello");
+
+// Sin arrow function
+var sum = function(a,b){
+    return a + b;
+}
+
+// Con arrow function
+sum = (a,b) => a + b;
+
+// Arrow function con varias lineas
+const variosSaludos = () => {
+    console.log("Uno");
+    console.log("Dos");
+    console.log("Tres");
+}
