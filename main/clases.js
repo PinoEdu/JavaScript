@@ -1,3 +1,4 @@
+// ***Clases***
 class Animal{
     // Metodo especial para crear una clase
     constructor(nombre, genero){
