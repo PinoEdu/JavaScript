@@ -30,3 +30,33 @@ for (let index = 0; index < arreglo.length; index++) {
 }
 
 console.timeEnd("Cuanto tiempo tarda mi código");
+
+// ***Objeto: Date***
+
+console.log(Date());
+
+let fecha = new Date();
+console.log(fecha);
+
+console.log(fecha.getDate());
+console.log(fecha.getDay());    // D L M Mi J V S -> 0 1 2 3 4 5 6
+console.log(fecha.getMonth());  // Dic E F M A M Ju Jul A S O Nov -> 0 1 2 3 4 5 6 7 8 9 10 11
+console.log(fecha.getFullYear());
+console.log(fecha.getHours());
+console.log(fecha.getMinutes());
+console.log(fecha.getSeconds());
+console.log(fecha.toDateString());
+console.log(fecha.toLocaleString());
+
+// ***Objeto: Math***
+
+console.log(Math);
+console.log(Math.PI);
+console.log(Math.abs(-7.8));
+console.log(Math.ceil(7.2));
+console.log(Math.floor(7.2));
+console.log(Math.round(7.5));
+console.log(Math.sqrt(81));
+console.log(Math.pow(2,5));
+console.log(Math.random());
+console.log(Math.round(Math.random() * 1000));
