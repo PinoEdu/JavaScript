@@ -72,3 +72,38 @@ const variosSaludos = () => {
     console.log("Dos");
     console.log("Tres");
 }
+
+// ***Funcion anonima auto-ejecutable***
+
+(function (){
+    console.log("Mi primer IIFE");
+})();
+
+(function (d, w, c){
+    console.log("Mi segunda IIFE");
+    console.log(d);
+    console.log(w);
+    c.log("Este es un console.log");
+
+})(document, window, console);
+
+
+// Clásica
+(function (){
+    console.log("Versión clásica");
+})();
+
+// La Crockford
+((function (){
+    console.log("Version Crockford");
+})());
+
+// Unaria
++function(){
+    console.log("Version Unaria");
+}();
+
+// Facebook
+!function (){
+    console.log("Version Facebook");
+}();

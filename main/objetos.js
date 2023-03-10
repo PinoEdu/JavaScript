@@ -60,3 +60,9 @@ console.log(Math.sqrt(81));
 console.log(Math.pow(2,5));
 console.log(Math.random());
 console.log(Math.round(Math.random() * 1000));
+
+// ***Alert, confirm y prompt***
+
+let alerta = alert("Hola esto es una alerta");
+let confirmacion = confirm("Hola esto es una confirmación");
+let aviso = prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
