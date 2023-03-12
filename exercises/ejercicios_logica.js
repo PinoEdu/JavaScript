@@ -129,4 +129,126 @@ const conversorBinario = (numero, base) =>{
     }
 }
 
-console.log(conversorBinario(123,10));
+// 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+const descuentos = (monto, porcentaje) => monto - monto*porcentaje/100;
+
+// 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+
+const contadorDeAños = (fecha) => {
+    const fechaActual = new Date();
+    var edad = fechaActual.getFullYear() - fecha.getFullYear();
+
+    if (fecha.getMonth() > fechaActual.getMonth()){
+        edad--;
+    } else if (fecha.getMonth() == fechaActual.getMonth()){
+        if  (fecha.getDay() > fechaActual.getDay()){
+            edad--;
+        } else{
+            return edad + " años";
+        }
+    }
+    return edad + " años";
+}
+
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+const contadorConstonantes = (palabra) => {
+    palabra = palabra.toLowerCase().split("");
+    vocales = ['a', 'e', 'i', 'o', 'u']
+    var cont_vocales = 0;
+    var cont_consonates = 0;
+    for(let i = 0; i < palabra.length; i++){
+        var flag = true;
+        for(let j = 0; j < vocales.length; j++){
+            if (palabra[i] == vocales[j]){
+                cont_vocales++;
+                flag = false;
+                break;
+            } else if (palabra[i] == ' '){
+                flag = false;
+                break
+            }
+        }
+        if (flag) {
+            cont_consonates++;
+        }
+    }
+    return "Vocales: " + cont_vocales + ", Consonantes: " + cont_consonates;
+}
+
+// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+const validadorNombre = (nombre) => {
+    let expReg = /^[A-Za-zÑñÁÉÍÓÚáéíóúüÜ\s]+$/g.test(nombre);
+    return (expReg) ? "El nombre ingresado es valido" : "El nombre ingresado no es valido";
+}
+
+// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+const validadorEmail = (email) =>{
+    let expReg = /^[A-Za-z0-9._]+@[A-Za-z]+.+[A-Za-z]+$/g.test(email)
+
+    return (expReg) ? "El correo ingresado es valido" : "El correo ingresado no es valido";
+}
+
+// 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+
+const elevados = (arreglo) => {
+    for(let i = 0; i < arreglo.length; i++){
+        arreglo[i] = arreglo[i]**2
+    }
+    return arreglo
+}
+
+// 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+
+const maxMin = (arreglo) => [Math.max(...arreglo), Math.min(...arreglo)];
+
+// 23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares,
+// pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+
+const separadorArreglos = (arreglo) => {
+    var pares = [], impares = [];
+    for(let i = 0; i < arreglo.length; i++){
+        (arreglo[i]%2 == 0) ? pares.push(arreglo[i]) : impares.push(arreglo[i]);
+    }
+    return {'pares' : pares, 'impares' : impares}
+}
+
+// 24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y
+// el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+
+
+const bubbleSort = (arreglo) => {
+    for(let i = 0; i < arreglo.length; i++){
+        for(let j = 0; j < arreglo.length - i; j++){
+            if(arreglo[j] > arreglo[j+1]){
+                var aux = arreglo[j];
+                arreglo[j] = arreglo[j+1];
+                arreglo[j+1] = aux;
+            }
+        }
+    }
+    var aux = []
+    for(let i = arreglo.length-1; i >= 0; i--){
+        aux.push(arreglo[i]);
+    }
+    return {'asc' : arreglo, 'desc' : aux}
+}
+
+// 25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+
+const eliminarDuplicados = (arreglo) => {
+    for(let i = 0; i < arreglo.length; i++){
+        for(let j = i+1; j < arreglo.length; j++){
+            if (arreglo[i] === arreglo[j]){
+                delete(arreglo[j]);
+            }
+        }
+    }
+    return arreglo.filter(valor => valor != undefined);
+}
+
+// 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+
+const promedio = (arreglo) => arreglo.reduce((a, b) => a + b, 0)/arreglo.length;
+
