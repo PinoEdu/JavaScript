@@ -98,4 +98,35 @@ const parImpar = (numero) => (numero%2 == 0) ? "Par" : "Impar";
 
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
 
-const conversor = (valor, grados) => (grados == "C") ? (valor*1.8 + 32) + "°F" : ((valor - 32)/1.8) + "°C";
+const conversorGrados = (valor, grados) => (grados == "C") ? (valor*1.8 + 32) + "°F" : ((valor - 32)/1.8) + "°C";
+
+// 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+
+const conversorBinario = (numero, base) =>{
+    if (base == 2){
+        numero = numero.toString().split("");
+        aux = 0;
+        for(let i = numero.length - 1, j = 0; i > 0; i--, j++){
+            if (numero[j] == 1){
+                aux += 2**i
+            }
+        }
+        return aux + " en base 10";
+    } else {
+        aux = []
+        while (numero > 0){
+            if (numero%2 == 0){
+                aux.push("0");
+                numero = numero/2
+            } else {
+                aux.push("1");
+                numero--;
+                numero = numero/2
+            }
+        }
+        aux = aux.reverse().join("");
+        return aux + " en base 2";
+    }
+}
+
+console.log(conversorBinario(123,10));
