@@ -85,3 +85,40 @@ const valoresMapa2 = [...mapa2.values()];
 
 console.log(llavesMapa2);
 console.log(valoresMapa2);
+
+// ***WeaksSets & WeakMaps***
+
+const ws = new WeakSet();
+
+let valor1 = {"valor1" : 1};
+let valor2 = {"valor2" : 2};
+let valor3 = {"valor3" : 3};
+
+ws.add(valor1); // Solo acepta objetos
+ws.add(valor2);
+ws.add(valor3);
+
+console.log(ws);
+console.log(ws.has(valor1));
+
+/* setInterval(() => console.log(ws),1000);
+
+setTimeout(() =>{
+    valor1 = null;
+    valor2 = null;
+    valor3 = null;
+},5000); */
+
+const wm = new WeakMap();
+
+let llave1 = {};
+let llave2 = {};
+let llave3 = {};
+
+wm.set(llave1, 1);
+wm.set(llave2, 2);
+
+console.log(wm);
+console.log(wm.has(llave1));
+console.log(wm.get(llave2));
+console.log(wm.get(llave3));
