@@ -7,11 +7,11 @@ console.info("Esto es un mensaje informativo");
 console.log("Un registro de lo que ha pasado en nuestra aplicación");
 console.clear();    // Limpia la consola
 
-console.log(window);
-console.log(document);
-console.dir(window);
-console.dir(document);
-console.clear();
+//console.log(window);
+//console.log(document);
+//console.dir(window);
+//console.dir(document);
+//console.clear();
 
 console.group("Cursos vistos en Youtube");
 console.log("Javascript");
@@ -63,6 +63,19 @@ console.log(Math.round(Math.random() * 1000));
 
 // ***Alert, confirm y prompt***
 
-let alerta = alert("Hola esto es una alerta");
-let confirmacion = confirm("Hola esto es una confirmación");
-let aviso = prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
+//let alerta = alert("Hola esto es una alerta");
+//let confirmacion = confirm("Hola esto es una confirmación");
+//let aviso = prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
+
+
+// ***Propiedades dinámicas de los objetos***
+
+const objUsuarios = {
+    [`id_${Math.round(Math.random()*100+5)}`] : "Valor aleatorio"
+}
+
+const usuarios = ["Eduardo", "Juan", "Maria", "Julio", "Julia"];
+
+usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+
+console.log(objUsuarios);
