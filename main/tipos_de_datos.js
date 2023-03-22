@@ -140,3 +140,35 @@ let tres = numeros[2];
 
 // Con destructuracion
 const [one,two,three] = numeros;
+
+// ***this***
+
+const obj = {
+    nombre : "Contexto objeto",
+    imprimir : function(){
+        console.log(this.nombre);
+    }
+}
+
+obj.imprimir();
+
+const obj2 = {
+    nombre : "Contexto objeto 2",
+    imprimir
+}
+
+obj2.imprimir();
+
+const obj3 = {
+    nombre : "Contexto objeto 3",
+    imprimir : () => {
+        console.log(this.nombre);
+    }
+}
+
+obj3.imprimir();
+
+function Persona(nombre){
+    this.nombre = nombre;
+    return console.log(this.nombre);
+}
