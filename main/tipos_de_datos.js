@@ -143,6 +143,11 @@ const [one,two,three] = numeros;
 
 // ***this***
 
+this.nombree = "Contexto Global";
+
+function imprimir(){
+    console.log(this.nombre);
+}
 const obj = {
     nombre : "Contexto objeto",
     imprimir : function(){
@@ -170,5 +175,45 @@ obj3.imprimir();
 
 function Persona(nombre){
     this.nombre = nombre;
-    return console.log(this.nombre);
+    //return console.log(this.nombre);
+    return function(){
+        console.log(this.nombre);
+    }
 }
+
+let edu = new Persona("Edu");
+edu();
+
+// ***call, apply, bind***
+
+console.log(this);
+
+this.lugar = "Contexto global";
+
+function saludarrr(saludo, aQuien){
+    console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+}
+
+saludarrr("Hola", "perro");
+
+const obj4 = {
+    lugar: "Contexto objeto"
+}
+
+saludarrr.call(obj4, "Hola", "Eduardo");
+saludarrr.apply(obj4, ["Adios", "Eduardo"]);
+
+const person = {
+    nombre: "Eduardo",
+    saludar: function(){
+        console.log(`Hola ${this.nombre}`);
+    }
+}
+
+person.saludar();
+
+const otraPersona = {
+    saludar: person.saludar.bind(person)
+}
+
+otraPersona.saludar();
