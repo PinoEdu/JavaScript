@@ -1,5 +1,7 @@
 // ***Var vs Let***
 
+const { json } = require("stream/consumers");
+
 // Ambito global
 var hola = "Hola Mundo";
 
@@ -217,3 +219,20 @@ const otraPersona = {
 }
 
 otraPersona.saludar();
+
+// ***Json***
+
+const json2 = {
+    cadena: "Eduardo",
+    numero: 35,
+    bool: true,
+    arreglo: ["correr", "programar", "debug"],
+    obj: {github: "github.com", correo: "correo@correo.cl"},
+    nulo: null
+}
+
+console.log(JSON.parse("{}"));  // Convierte de cadena de texto a objeto valido por js
+
+console.log(JSON.stringify(json2));
+console.log(typeof(JSON.stringify(json2)));
+
