@@ -19,3 +19,21 @@ setTimeout(() => {
 }, 3000);
 
 document.write("Hello World!");
+
+// ***DOM: Nodos, Elementos y Selectores***
+
+console.log(document.querySelector("menu"));
+console.log(document.querySelector("#menu"));
+console.log(document.querySelectorAll("a"));
+console.log(document.querySelectorAll("a").length);
+document.querySelectorAll("a").forEach((el) => console.log(el));
+
+// ***DOM: Atributos y Data-Attributes***
+
+console.log(document.documentElement.lang);
+console.log(document.documentElement.getAttribute("lang"));
+console.log(document.querySelector(".link-dom").href);
+console.log(document.querySelector(".link-dom").getAttribute("href"));
+
+document.documentElement.lang = "en";
+console.log(document.documentElement.lang);
