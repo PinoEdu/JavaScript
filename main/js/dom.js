@@ -84,3 +84,19 @@ const removerDobleClick = (e) => {
 }
 
 $eventoRemover.addEventListener("dblclick", removerDobleClick);
+
+// ***DOM: Flujo de eventos***
+const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+
+function flujoEventos(e){
+    console.log(`Hola ${this.className}, el click lo originó ${e.target.className}`);
+}
+
+console.log($divsEventos);
+
+$divsEventos.forEach((div) =>{
+    div.addEventListener("click", flujoEventos,{
+        capture: false,
+        once: true
+    });
+})
