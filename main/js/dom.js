@@ -87,16 +87,25 @@ $eventoRemover.addEventListener("dblclick", removerDobleClick);
 
 // ***DOM: Flujo de eventos***
 const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+const $linkEventos = document.querySelector(".eventos-flujo a");
 
 function flujoEventos(e){
     console.log(`Hola ${this.className}, el click lo originó ${e.target.className}`);
+    e.stopPropagation();    //Detener la propagación del forEach
 }
 
 console.log($divsEventos);
 
 $divsEventos.forEach((div) =>{
-    div.addEventListener("click", flujoEventos,{
+/*     div.addEventListener("click", flujoEventos,{
         capture: false,
         once: true
-    });
+    }); */
+
+    div.addEventListener("click", flujoEventos);
+})
+
+$linkEventos.addEventListener("click", e => {
+    alert(`Holaaaaaaaaaaaaaaaaaaaaaa`);
+    e.preventDefault(); // Cancelar la accion que se tenga por default
 })
