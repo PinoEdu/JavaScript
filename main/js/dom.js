@@ -145,3 +145,20 @@ document.addEventListener("DOMContentLoaded", e => {
     console.log(window.scrollY);
     console.log(e);
 })
+
+const $btnAbrir = document.getElementById('abrir-ventana');
+const $btnCerrar = document.getElementById('cerrar-ventana');
+const $btnImprimir = document.getElementById('imprimir-ventana');
+
+let ventana;
+
+$btnAbrir.addEventListener("click", e => {
+    ventana = window.open("https://youtube.com");
+});
+
+$btnCerrar.addEventListener("click", e => {
+    ventana.close();
+});
+$btnImprimir.addEventListener("click", e => {
+    window.print();
+});
